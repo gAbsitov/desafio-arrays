@@ -1,44 +1,34 @@
-let pregunta = prompt ("¿Te animas a responder algunas preguntas sobre Dragon ball Z?").toLowerCase()
-    if(pregunta == "si"){
-        alert ("Bien ahiiii.")
-    }else{
-        alert ("Bueno, las vas a responder igual")
-    }
+// Mi idea fue hacer un simulador de prestamos, o al menos eso intente!
 
-let repetir = true;
-
-while (repetir){
-
-    let pregunta1 = prompt("En la saga de Cell ¿quien se convierte en Super saiyan 2?").toLowerCase()
-    let pregunta2 = prompt("En la saga de Bu ¿Goku se convierte en Super Saiyan 3?").toLowerCase()
-    let pregunta3 = prompt("¿Como se llama el hermano de Goku?").toLowerCase()
-
-    if (pregunta1 === "gohan" ){
-        repetir = false 
-    }else{
-        repetir = true
-    }
+alert ("Se ha concedido su pedido de prestamo con exito y tendrá un porcentaje de interes del 15%, a continuacion ingrese los siguientes datos:")
 
 
-    if (pregunta2 === "si"){
-        repetir = false
-    }else {
-        repetir = true
-    }
+let capital = parseFloat(prompt("Ingrese la cantidad que se le proporcionará:"))
+let cuotas = parseFloat(prompt("Ingrese el numero de cuotas:"))
 
 
-    if (pregunta3 === "raditz"){
-        repetir = false
-    }else{
-        repetir = true
-       
-    }
+function prestamo(capital, cuotas) {
+
+    let operacion = capital  * 0.15 + capital
+
+    let operacion2 = operacion / cuotas
+
+    return operacion2
 
 
-    if( repetir == false){
-    alert ("¡Felicidades! sigues recordando una de las mejores epocas de la infancia.")
-    }else{
-        repetir == true
-        alert ("Me parece que no recuerdas del todo, vamos de nuevo.")
-    }
+}    if(isNaN(capital) || isNaN(cuotas)){
+    alert ("No está ingresando un valor correcto, intente nuevamente")
+}else{
+    alert (`El monto que usted necesita pagar por cada cuota es de ${prestamo(capital, cuotas)} pesos.`)
+
 }
+
+
+
+
+
+
+
+
+
+
